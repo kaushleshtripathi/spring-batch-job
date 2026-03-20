@@ -1,4 +1,4 @@
-package com.springbatch.promotionalemailgenerator.processor;
+package com.springbatch.test.processor;
 
 import java.text.NumberFormat;
 
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 import com.springbatch.promotionalemailgenerator.model.ClientProductInterest;
 
 @Component
-public class ProcessEmailProductClientProcessor implements ItemProcessor<ClientProductInterest, SimpleMailMessage> {
+public class SpringBatchProcessor implements ItemProcessor<Product, SimpleMailMessage> {
 
 	@Override
-	public SimpleMailMessage process(ClientProductInterest clientProductInterest) throws Exception {
+	public SimpleMailMessage process(Product clientProductInterest) throws Exception {
 		SimpleMailMessage email = new SimpleMailMessage();
 		email.setFrom("xpto@no-reply.com");
 		email.setTo(clientProductInterest.getClient().getEmail());
@@ -22,7 +22,7 @@ public class ProcessEmailProductClientProcessor implements ItemProcessor<ClientP
 		return email;
 	}
 
-	private String generatePromotionText(ClientProductInterest clientProductInterest) {
+	private String generatePromotionText(Product clientProductInterest) {
 		StringBuilder writer = new StringBuilder();
 		writer.append(String.format("Olá, %s!\n\n", clientProductInterest.getClient().getName()));
 		writer.append("Essa promoção pode ser do seu interesse:\n\n");

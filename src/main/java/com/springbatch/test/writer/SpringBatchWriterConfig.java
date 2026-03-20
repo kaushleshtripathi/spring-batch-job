@@ -1,4 +1,4 @@
-package com.springbatch.promotionalemailgenerator.writer;
+package com.springbatch.test.writer;
 
 import org.springframework.batch.item.mail.SimpleMailMessageItemWriter;
 import org.springframework.batch.item.mail.builder.SimpleMailMessageItemWriterBuilder;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.MailSender;
 
 @Configuration
-public class SendInterestProductEmailWriterConfig {
+public class SpringBatchWriterConfig {
 	@Bean
 	public SimpleMailMessageItemWriter sendInterestProductEmailWriter(MailSender mailSender) {
 		return new SimpleMailMessageItemWriterBuilder()

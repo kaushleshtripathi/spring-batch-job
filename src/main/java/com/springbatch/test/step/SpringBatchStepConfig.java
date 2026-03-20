@@ -1,4 +1,4 @@
-package com.springbatch.promotionalemailgenerator.step;
+package com.springbatch.test.step;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -13,15 +13,15 @@ import org.springframework.mail.SimpleMailMessage;
 import com.springbatch.promotionalemailgenerator.model.ClientProductInterest;
 
 @Configuration
-public class PromotionalEmailGeneratorStepConfig {
+public class SpringBatchStepConfig {
 
 	@Autowired
 	private StepBuilderFactory stepBuilderFactory;
 	
 	@Bean
 	public Step sendEmailStep(
-			ItemReader<ClientProductInterest> readInterestProductClientReader,
-			ItemProcessor<ClientProductInterest, SimpleMailMessage> processEmailProductClientProcessor,
+			ItemReader<Product> readInterestProductClientReader,
+			ItemProcessor<Product, SimpleMailMessage> processEmailProductClientProcessor,
 			ItemWriter<SimpleMailMessage> sendInterestProductEmailWriter) {
 		return stepBuilderFactory
 				.get("sendEmailStep")

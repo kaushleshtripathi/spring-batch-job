@@ -1,4 +1,4 @@
-package com.springbatch.promotionalemailgenerator.job;
+package com.springbatch.test.job;
 
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -10,7 +10,7 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
-public class PromotionalEmailGeneratorScheduleJob extends QuartzJobBean {
+public class SpringBatchScheduleJob extends QuartzJobBean {
 	@Autowired
 	private Job job;
 	@Autowired

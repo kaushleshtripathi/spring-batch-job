@@ -1,4 +1,4 @@
-package com.springbatch.promotionalemailgenerator.config;
+package com.springbatch.test.config;
 
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;

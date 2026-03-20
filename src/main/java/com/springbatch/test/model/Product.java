@@ -1,4 +1,4 @@
-package com.springbatch.promotionalemailgenerator.model;
+package com.springbatch.test.model;
 
 import lombok.*;
 
@@ -8,8 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Client {
+public class Product {
 	private int id;
 	private String name;
-	private String email;
+	private String description;
+	private Double price;
 }

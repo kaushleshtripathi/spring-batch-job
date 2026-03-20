@@ -1,13 +1,13 @@
-package com.springbatch.promotionalemailgenerator;
+package com.springbatch.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PromotionalEmailGeneratorApplication {
+public class SpringBatchApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PromotionalEmailGeneratorApplication.class, args);
+		SpringApplication.run(SpringBatchApplication.class, args);
 	}
 
 }

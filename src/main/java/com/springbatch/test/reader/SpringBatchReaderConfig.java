@@ -1,4 +1,4 @@
-package com.springbatch.promotionalemailgenerator.reader;
+package com.springbatch.test.reader;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,29 +17,29 @@ import com.springbatch.promotionalemailgenerator.model.Client;
 import com.springbatch.promotionalemailgenerator.model.ClientProductInterest;
 
 @Configuration
-public class ReadInterestProductClientReaderConfig {
+public class SpringBatchReaderConfig {
 	@Bean
-	public JdbcCursorItemReader<ClientProductInterest> readInterestProductClientReader(
+	public JdbcCursorItemReader<Product> readInterestProductClientReader(
 			@Qualifier("appDataSource") DataSource dataSource) {
-		return new JdbcCursorItemReaderBuilder<ClientProductInterest>()
+		return new JdbcCursorItemReaderBuilder<Product>()
 				.name("readInterestProductClientReader")
 				.dataSource(dataSource)
-				.sql("select * from client_product_interest " +
-						"join client on (client = client.id)" +
-						"join product on (product = product.id)")
+				.sql("select * from Product " +
+						"join item on (client = client.id)" +
+						"join price on (product = product.id)")
 				.rowMapper(rowMapper())
 				.build();
 	}
 
-	private RowMapper<ClientProductInterest> rowMapper() {
-		return new RowMapper<ClientProductInterest>() {
+	private RowMapper<Product> rowMapper() {
+		return new RowMapper<Product>() {
 
 			@Override
 			public ClientProductInterest mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Client client = new Client();
-				client.setId(rs.getInt("id"));
-				client.setName(rs.getString("name"));
-				client.setEmail(rs.getString("email"));
+				Item item = new Item();
+				item.setId(rs.getInt("id"));
+				item.setName(rs.getString("name"));
+				item.setEmail(rs.getString("email"));
 				
 				Product product = new Product();
 				product.setId(rs.getInt(6));
@@ -47,8 +47,8 @@ public class ReadInterestProductClientReaderConfig {
 				product.setDescription(rs.getString("description"));
 				product.setPrice(rs.getDouble("price"));
 				
-				ClientProductInterest clientProductInterest = new ClientProductInterest();
-				clientProductInterest.setClient(client);
+				Price clientProductInterest = new Price();
+				clientProductInterest.setItem(item);
 				clientProductInterest.setProduct(product);
 				return clientProductInterest;
 			}
