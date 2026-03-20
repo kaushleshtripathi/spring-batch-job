@@ -1,8 +1,8 @@
-spring-Batch
+**spring-Batch**
 Spring Batch Implementation where we can process millions of records in seconds
 
 
-🛠️ Tech Stack
+**🛠️ Tech Stack**
 
 1. Java 21
 2. Spring Boot 3.x
@@ -12,6 +12,6 @@ Spring Batch Implementation where we can process millions of records in seconds
 6. PostreSQL (or any JDBC-compatible database)
 7. Lombok
 
-📌 Key Features
+**📌 Key Features**
 
-📁 Project Structure
+**📁 Project Structure**
