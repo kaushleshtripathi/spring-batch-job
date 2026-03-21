@@ -1,3 +1,4 @@
+/*
 package com.springbatch.test.job;
 
 import org.springframework.batch.core.Job;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableBatchProcessing
 @Configuration
 public class SpringBatchJobConfig {
+
 	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
 	
@@ -24,3 +26,4 @@ public class SpringBatchJobConfig {
 				.build();
 	}
 }
+*/

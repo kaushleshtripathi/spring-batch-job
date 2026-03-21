@@ -1,3 +1,4 @@
+/*
 package com.springbatch.test.config;
 
 import org.quartz.JobBuilder;
@@ -8,7 +9,6 @@ import org.quartz.TriggerBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.springbatch.promotionalemailgenerator.job.PromotionalEmailGeneratorScheduleJob;
 
 @Configuration
 public class QuartzConfig {
@@ -34,3 +34,4 @@ public class QuartzConfig {
 				.build();
 	}
 }
+*/

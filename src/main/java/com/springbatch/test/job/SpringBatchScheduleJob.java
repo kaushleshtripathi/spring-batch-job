@@ -1,3 +1,4 @@
+/*
 package com.springbatch.test.job;
 
 import org.quartz.JobExecutionContext;
@@ -29,3 +30,4 @@ public class SpringBatchScheduleJob extends QuartzJobBean {
 	}
 
 }
+*/
